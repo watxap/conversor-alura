@@ -1,34 +1,44 @@
-var nombreVisitante = "Carlitos"
-
-var valorEnDolar = 155.5;
-
-var cotizacionEnPesos = 16.893;
-
-var cotizacionEnBitcoin = 34585.20;
-
-var valorEnPesos = valorEnDolar * cotizacionEnPesos;
-var valorEnCripto = valorEnDolar * cotizacionEnBitcoin; 
-
-valorEnPesos = valorEnPesos.toFixed(2);
-valorEnCripto = valorEnCripto.toFixed(2);
-
-var valorCentigrados = 24;
-
-var valorFarenheit = (valorCentigrados * 9/5) + 32;
-
-var valorKelvin = valorCentigrados + 273.15;
-
+//Paso 1: Carga de nombre
 var nombreUsuario = prompt(`¿Cuál es tu nombre?`);
 
-alert ("Hola, "+nombreUsuario+"!"+"\n"+"Presiona el botón para ver las cotizaciones del Dólar Estadounidense a Pesos Mexicanos y en Bitcoin")
-alert ("$Mex "+valorEnPesos+"\n"+"$BTC "+valorEnCripto);
-alert ("Solo para que lo sepas, la temperatura actual es de:"+"\n"+"ºC "+valorCentigrados+"\n"+"ºF "+valorFarenheit+"\n"+"ºK "+valorKelvin)
-
-var opcion = Number(
-    prompt(
-      `Elija que tipo de conversión quiere realizar (1 - 3):
+//Paso 2:Saludo de bienvenida con elección de conversor
+var eligeConversor = Number(
+    prompt(`¡Hola, ${nombreUsuario}!
+    ¿Qué tipo de conversor deseas utilizar? (1 - 2):
     1. Moneda
     2. Temperatura
-    3. Criptomoneda`
+    `
     )
-  );
+);
+
+// Opción Moneda:
+  if (eligeConversor === 1) {
+    var montoDolares = Number(prompt(`Ingrese la cantidad de US$ a convertir`));
+    var eligeMoneda = Number(prompt
+        (`¿A qué moneda deseas convertirlo? (1 - 2):
+        1. Pesos
+        2. Bitcoins
+        `)) 
+        if (eligeMoneda === 1) {
+            montoPesos= montoDolares * 1001;
+            alert(`Con US$ ${montoDolares} te comprás $ARG ${montoPesos}.`+"\n"+`Valor actualizado al 30/10/23.`); 
+        } else if (eligeMoneda === 2) {
+            montoCripto= montoDolares * 0.0029;
+            alert(`Con US$ ${montoDolares} te comprás $BTC ${montoCripto}.`+"\n"+`Valor actualizado al 30/10/23.`);
+        } else {
+            alert(`ERROR: La opción que ingresaste NO se encuentra registrada. Intentalo nuevamente.`);
+          }
+             
+// Opción Temperatura:
+} else if (eligeConversor === 2) {
+    var tempActual = Number(prompt(`Ingresá la temperatura actual en ºC`))
+    var kelvin = tempActual + 273.15
+    var farenheit = (tempActual*1.8)+32
+    alert(`La temperatura actual es de ${kelvin}ºK y ${farenheit}ºF`)
+} 
+
+// Opción Error:
+
+else {
+    alert(`ERROR: La opción que ingresaste NO se encuentra registrada. Intentalo nuevamente.`);
+}
