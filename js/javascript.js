@@ -18,6 +18,17 @@ var valorFarenheit = (valorCentigrados * 9/5) + 32;
 
 var valorKelvin = valorCentigrados + 273.15;
 
-alert ("Hola, "+nombreVisitante+"!"+"\n"+"Presiona el botón para ver las cotizaciones del Dólar Estadounidense a Pesos Mexicanos y en Bitcoin")
+var nombreUsuario = prompt(`¿Cuál es tu nombre?`);
+
+alert ("Hola, "+nombreUsuario+"!"+"\n"+"Presiona el botón para ver las cotizaciones del Dólar Estadounidense a Pesos Mexicanos y en Bitcoin")
 alert ("$Mex "+valorEnPesos+"\n"+"$BTC "+valorEnCripto);
 alert ("Solo para que lo sepas, la temperatura actual es de:"+"\n"+"ºC "+valorCentigrados+"\n"+"ºF "+valorFarenheit+"\n"+"ºK "+valorKelvin)
+
+var opcion = Number(
+    prompt(
+      `Elija que tipo de conversión quiere realizar (1 - 3):
+    1. Moneda
+    2. Temperatura
+    3. Criptomoneda`
+    )
+  );
