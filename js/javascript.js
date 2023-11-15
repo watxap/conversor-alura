@@ -1,4 +1,4 @@
-//Paso 1: Carga de nombre
+//Paso 1: Carga de nombre (Desafío 1)
 var nombreUsuario = prompt(`¿Cuál es tu nombre?`);
 
 //Paso 2:Saludo de bienvenida con elección de conversor
@@ -11,7 +11,7 @@ var eligeConversor = Number(
     )
 );
 
-// Opción Moneda:
+// Opción Moneda (Desafío 2):
   if (eligeConversor === 1) {
     var montoDolares = Number(prompt(`Ingrese la cantidad de US$ a convertir`));
     var eligeMoneda = Number(prompt
@@ -29,7 +29,7 @@ var eligeConversor = Number(
             alert(`ERROR: La opción que ingresaste NO se encuentra registrada. Intentalo nuevamente.`);
           }
              
-// Opción Temperatura:
+// Opción Temperatura (Desafío 3):
 } else if (eligeConversor === 2) {
     var tempActual = Number(prompt(`Ingresá la temperatura actual en ºC`))
     var kelvin = tempActual + 273.15
@@ -37,7 +37,7 @@ var eligeConversor = Number(
     alert(`La temperatura actual es de ${kelvin}ºK y ${farenheit}ºF`)
 } 
 
-// Opción Error:
+// Mensaje de Error:
 
 else {
     alert(`ERROR: La opción que ingresaste NO se encuentra registrada. Intentalo nuevamente.`);
